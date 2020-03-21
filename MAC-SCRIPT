@@ -1,6 +1,71 @@
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew update -v;brew upgrade -v;brew cleanup -v
-brew install wget
+#!/usr/bin/env zsh 
+
+########### Descargar el github privado #############################
+#git clone https://github.com/Loop-Man/MAC.git $HOME/Github/Personal/MAC/
+#####################################################################
+
+########### Instalar brew ###########################################
+
+#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+#brew update -v;brew upgrade -v;brew cleanup -v
+#brew install zsh-syntax-highlighting zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-git-prompt
+
+#brew install wget tmux iterm2 scrub lsd bat fzf
+#brew cask install keepassxc
+
+#brew install nmap wireshark sqlmap postgresql ruby
+#brew cask install java burp-suite metasploit
+
+#brew install openvpn htop grc
+#brew cask install firefox chromium deepl adobe-acrobat-reader protonvpn discord typora visual-studio-code   
+
+#brew tap homebrew/cask-fonts
+#brew cask install font-hack-nerd-font
+#echo 'PONER LA FUENTE HACK A LA TERMINAL Y A I2TERM. PD: Pulsa una fucking tecla'
+#read -n 1
+########### Instalar con pip #######################################
+
+#sudo pip3 install requests
+
+########### Instalar zsh ############################################
+
+cd $HOME
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-sh install.sh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+sed -i .tmp 's/\~\/.oh-my-zsh\}$/\~\/.zsh\/.oh-my-zsh\}/g' install.sh
+sh install.sh &>/dev/null &
+sleep 20
+rm -rf install*
+	#cat install.sh |sed 's/\~\/.oh-my-zsh\}$/\~\/.zsh\/.oh-my-zsh\}/g' > install2.sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/.zsh/.oh-my-zsh/themes/powerlevel10k
+sed -i .tmp 's/robbyrussell/powerlevel10k\/powerlevel10k/1' .zshrc
+rm -rf .zshrc.tmp
+
+
+########## Instalar awesome vim ####################################
+
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim/.vim_runtime
+sed -i .tmp 's/\.vim\_runtime/\.vim\/\.vim\_runtime/g' $HOME/.vim/.vim_runtime/install_awesome_vimrc.sh
+sh $HOME/.vim/.vim_runtime/install_awesome_vimrc.sh
+rm -rf $HOME/.vim/.vim_runtime/install_awesome_vimrc.sh
+mv $HOME/.vim/.vim_runtime/install_awesome_vimrc.sh.tmp $HOME/.vim/.vim_runtime/install_awesome_vimrc.sh
+
+######### Actualizar awesome vim ###################################
+
+cd ~/.vim/.vim_runtime
+git pull --rebase
+python3 update_plugins.py
+cd $HOME
+
+########## Instalar tmux ###########################################
+
+git clone https://github.com/gpakosz/.tmux.git
+ln -s -f .tmux/.tmux.conf
+cp .tmux/.tmux.conf.local .
+
+########## Copiar ficheros del repositorio personal de git #########
+
+cp $HOME/Github/Personal/MAC/.zsh/.fzf.zsh $HOME/.zsh/
+cp $HOME/Github/Personal/MAC/.zsh/.p10k.zsh $HOME/.zsh/
+cp $HOME/Github/Personal/MAC/.zsh/.zsh_history $HOME/.zsh/
+#cp $HOME/Github/Personal/MAC/.zshrc $HOME/
+
