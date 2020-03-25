@@ -73,4 +73,4 @@ cp $HOME/Github/Personal/MAC/.zsh/.fzf.zsh $HOME/.zsh/
 cp $HOME/Github/Personal/MAC/.zsh/.p10k.zsh $HOME/.zsh/
 cp $HOME/Github/Personal/MAC/.zsh/.zsh_history $HOME/.zsh/
 cp $HOME/Github/Personal/MAC/.zshrc $HOME/
-
+cp $HOME/Github/Personal/MAC/.vimrc $HOME/
