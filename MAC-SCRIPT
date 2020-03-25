@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh 
 
 ########### Descargar el github privado #############################
-git clone https://github.com/Loop-Man/MAC.git $HOME/Github/Personal/MAC/
+#git clone https://github.com/Loop-Man/MAC.git $HOME/Github/Personal/MAC/
 #####################################################################
 
 ########### Instalar brew ###########################################
