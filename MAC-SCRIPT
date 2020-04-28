@@ -79,3 +79,5 @@ cp $ruta/.zsh/.p10k.zsh $HOME/.zsh/
 cp $ruta/.zsh/.zsh_history $HOME/.zsh/
 cp $ruta/.zshrc $HOME/
 cp $ruta/.vimrc $HOME/
+
+echo "Reboot, open vim and execute :PluginInstall"
