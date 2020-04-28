@@ -6,31 +6,31 @@
 
 ########### Instalar brew ###########################################
 
-#/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update -v;brew upgrade -v;brew cleanup -v
-#brew install zsh-syntax-highlighting zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-git-prompt
+brew install zsh-syntax-highlighting zsh-autosuggestions zsh-completions zsh-history-substring-search zsh-git-prompt
 
-#brew install wget tmux scrub lsd bat fzf
+brew install wget tmux scrub lsd bat fzf
 #brew cask install keepassxc
-#brew cask install iterm2
+brew cask install iterm2
 
-#brew install nmap wireshark sqlmap postgresql
+brew install nmap wireshark sqlmap postgresql
 ##### Ojo con el antivirus para instalar metasploit, excluir la ruta ##########
-#brew cask install java burp-suite metasploit 
+brew cask install java burp-suite metasploit 
 
-#brew install openvpn htop grc
-#brew cask install deepl adobe-acrobat-reader discord typora visual-studio-code   
+brew install openvpn htop grc
+brew cask install deepl adobe-acrobat-reader discord typora visual-studio-code   
 #brew cask install firefox chromium protonvpn 
 
 
-#brew tap homebrew/cask-fonts
-#brew cask install font-hack-nerd-font
-#echo 'PONER LA FUENTE HACK A LA TERMINAL Y A I2TERM. PD: Pulsa una fucking tecla'
-#read -n 1 #### Para parar el programa a la espera de leer un caracter del teclado
+brew tap homebrew/cask-fonts
+brew cask install font-hack-nerd-font
+echo 'PONER LA FUENTE HACK A LA TERMINAL Y A I2TERM. PD: Pulsa una fucking tecla'
+read -n 1 #### Para parar el programa a la espera de leer un caracter del teclado
 
 ########### Instalar con pip #######################################
 
-#sudo pip3 install requests
+sudo pip3 install requests
 
 ########### Instalar zsh ############################################
 
@@ -66,6 +66,11 @@ cd $HOME
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
+
+########## Instalar fzf ############################################
+
+git clone --depth 1 https://github.com/junegunn/fzf.git  ~/.fzf
+~/.fzf/install
 
 ########## Copiar ficheros del repositorio personal de git #########
 
