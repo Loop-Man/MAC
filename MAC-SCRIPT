@@ -33,7 +33,7 @@ read -n 1 #### Para parar el programa a la espera de leer un caracter del teclad
 sudo pip3 install requests
 
 ########### Instalar zsh ############################################
-
+ruta=$(pwd)
 cd $HOME
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 sed -i .tmp 's/\~\/.oh-my-zsh\}$/\~\/.zsh\/.oh-my-zsh\}/g' install.sh
@@ -74,8 +74,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git  ~/.fzf
 
 ########## Copiar ficheros del repositorio personal de git #########
 
-cp $HOME/Github/Personal/MAC/.zsh/.fzf.zsh $HOME/.zsh/
-cp $HOME/Github/Personal/MAC/.zsh/.p10k.zsh $HOME/.zsh/
-cp $HOME/Github/Personal/MAC/.zsh/.zsh_history $HOME/.zsh/
-cp $HOME/Github/Personal/MAC/.zshrc $HOME/
-cp $HOME/Github/Personal/MAC/.vimrc $HOME/
+cp $ruta/.zsh/.fzf.zsh $HOME/.zsh/
+cp $ruta/.zsh/.p10k.zsh $HOME/.zsh/
+cp $ruta/.zsh/.zsh_history $HOME/.zsh/
+cp $ruta/.zshrc $HOME/
+cp $ruta/.vimrc $HOME/
