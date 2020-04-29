@@ -101,6 +101,10 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.zsh/.p10k.zsh ]] || source ~/.zsh/.p10k.zsh
 
+# For go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 # Additional security options Homebrew:
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_INSECURE_REDIRECT=1
@@ -129,15 +133,34 @@ alias catnl='/usr/local/bin/bat --paging=never'
 alias nmap='grc nmap'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 alias actualizar='brew update -v;brew upgrade -v;brew cleanup -v'
+alias update='sudo updatedb;sudo searchsploit -u;sudo nmap --script-updatedb;sudo cve_searchsploit -u'
 alias rm='rm -rf'
 alias htop='sudo htop'
 alias updatedb='sudo /usr/libexec/locate.updatedb'
 
+#continue download
+alias wget="wget -c"
 
-#function mkt(){
-#	mkdir {nmap,content,exploits,scripts}
-#}
+#ps
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+#readable output
+alias df='df -h'
+
+# mv cp rm verbose
+alias mv='mv -v'
+alias cp='cp -v'
+alias rm='rm -v'
+
+#HTB vpn
+alias htbvpn='sudo /usr/bin/openvpn ~/HTB/ElderOrion.ovpn'
+
+function mkt(){
+	mkdir {nmap,content,exploits,scripts}
+}
 
 function rmk(){
 	scrub -p dod $1; rm -P $1
@@ -157,7 +180,7 @@ function man() {
 }
 
 # History
-SAVEHIST=100000
+SAVEHIST=1000000
 HISTFILE=~/.zsh/.zsh_history
 setopt inc_append_history
 
