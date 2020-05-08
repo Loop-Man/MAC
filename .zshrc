@@ -156,7 +156,8 @@ alias cp='cp -v'
 alias rm='rm -v'
 
 #HTB vpn
-alias htbvpn='sudo /usr/bin/openvpn ~/HTB/ElderOrion.ovpn'
+alias htbvpn='sudo /usr/local/Cellar/openvpn/2.4.9/sbin/openvpn $HOME/HTB/LoopMan.ovp'
+alias openvpn='sudo /usr/local/Cellar/openvpn/2.4.9/sbin/openvpn'
 
 function mkt(){
 	mkdir {nmap,content,exploits,scripts}
